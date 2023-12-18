@@ -1,4 +1,4 @@
-Job Application System
+Job Application Console App
 1. Display Instructions
 2. Get user input
 3. Create a folder

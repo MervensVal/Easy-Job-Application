@@ -1,0 +1,16 @@
+Job Application System
+
+PART 1 ------------------------------
+1. Display Instructions
+2. Get user input
+- Name (no special characters)
+- DOB
+- Email (email format)
+- Current Position 
+- Current position type
+- Current Salary (must be an int)
+- Years of experience (must have at least 2)
+- Degree (bachelors is required)
+
+3.Create a folder with CandidatyesName
+4. Save data in file 

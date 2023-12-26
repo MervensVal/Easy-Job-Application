@@ -12,5 +12,7 @@ PART 1 ------------------------------
 - Years of experience (must have at least 2)
 - Degree (bachelors is required)
 
-3.Create a folder with CandidatyesName
+3. Create a folder with CandidatyesName
 4. Save data in file 
+5. Save data in Database
+6. Pull data in DB and analyze

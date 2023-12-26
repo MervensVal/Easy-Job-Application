@@ -1,6 +1,6 @@
 from datetime import date
-import os
-import random
+import fileWork as fw
+import dbWork as db
 
 try:
     print("Thank you for applying with BizCorp using our Quick App!")
@@ -13,7 +13,7 @@ try:
     email = input('Email: ')
     phone = input('Phone number (###-###-####): ')
     currPosition = input('Current Position: ')
-    salary= int(input('Salary Expectations (must be a number): '))
+    salaryExp= int(input('Salary Expectations (must be a number): '))
     yrsExperience = int(input('Years of experience (minimum of 2 is required): '))
     degreeLevel = input('Do you have at least a bachelors degree? Yes (Y) or No (N): ')[0]
     degree = input('Degree: ')
@@ -36,22 +36,10 @@ try:
 
     #Create folder if not already exists
     if eligible:
-        directory = './Candidates'
-        isExist = os.path.exists(directory)
-        if not isExist:
-            os.mkdir(directory)
-        fileName = fname+'_'+lname+'_'+str(random.randint(1,1000000))
-        filePath = './'+directory+'/'+fileName
-        f = open(filePath,'x')
-        f = open(filePath,'a')
-        f.write(fname + '|' + lname + '|' + dob + '|' + email + '|' + phone + '|' + currPosition + '|' + str(salary) + '|' + str(yrsExperience)+ '|' + degree+ '|' + today.strftime("%m/%d/%Y, %H:%M:%S"))
-        f.close
-
-        #Save results in DB 
-        #Create table if does not exists
-        #insert data into table including filename
-        print("Information has been saved")
-
+        fileName = 'no_file_name'
+        fw.save_to_file(fname,lname,dob,email,phone,currPosition,salaryExp,yrsExperience,degree,today)
+        fileName = fw.fileName
+        db.save_to_db(fname,lname,dob,email,phone,currPosition,salaryExp,yrsExperience,degree,today,fileName)
 except Exception as e:
     print('Error Occured')
     print('-----------------------------------------------------')

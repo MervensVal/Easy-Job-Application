@@ -3,4 +3,6 @@ Job Application Console App
 2. Get user input
 3. Create a folder
 4. Save data in file
-5. Analyze the data 
+5. Create database table
+6. Save data in database table
+7. Analyze the data 

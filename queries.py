@@ -28,3 +28,17 @@ insert_into_Application_Data = '''
 insert into Application_Data
 values(?,?,?,?,?,?,?,?,?,?,?)
 '''
+
+pull_app_data = '''
+select * from Application_Data
+order by DateOfSubmission asc'''
+
+count_app_data = '''
+select count(*) from Application_Data
+'''
+
+avg_experience_salary_exp = '''
+select avg(SalaryExpectation), 
+avg(YrsExperience)
+from Application_Data 
+'''

@@ -22,7 +22,8 @@ else:
     def analytics():
         try:
             cursor = conn.cursor()
-            cursor.execute(q.createTable_Application_Data)
+            #cursor.execute(q.createTable_Application_Data)
+
             cursor.execute(q.count_app_data)
             for row in cursor:
                 print('Number of Applications: ', row[0])
@@ -32,7 +33,6 @@ else:
             for row in cursor:
                 print('AVG_Salary_Expectation: ',row[0])
                 print('AVG_Years_of_Experience: ',row[1])
-
             
             print('All Applications: ')
             cursor.execute(q.pull_app_data)
@@ -46,10 +46,10 @@ else:
                  print('Phone: ',row[5])
                  print('Current Position: ',row[6])
                  print('Salary Expectation: ',row[7])
-                 print('Years of Experience: ',row[7])
-                 print('Degree: ',row[8])
-                 print('Date of Submission: ',row[9])
-                 print('File Name: ',row[10])
+                 print('Years of Experience: ',row[8])
+                 print('Degree: ',row[9])
+                 print('Date of Submission: ',row[10])
+                 print('File Name: ',row[11])
                  print('--------------------------------------------')
         except Exception as e:
                 print(e.value)
